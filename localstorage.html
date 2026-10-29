@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        console.log("현재 페이지 경로", location.pathname);
+        if(!localStorage.getItem("hasVisited")){
+            alert("환영합니다. 첫방문이군요!");
+            localStorage.setItem("hasVisited","true");
+        }
+        else{
+            console.log("이미 방문");
+        }
+        const stores =[10,20,30];
+        stores.forEach(store=>{console.log(store)});
+
+        const update= stores.map(store=>store+5);
+        console.log(update);
+
+        const students = [{id:1, name:"KIM",score:80},{id:2,name:"LIM",score:77},{id:3,name:"Kwak",score:22}];
+
+        const names=[];
+        students.forEach(function(student){push(student.name)});
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
