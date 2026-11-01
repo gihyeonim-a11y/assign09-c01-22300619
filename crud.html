@@ -64,19 +64,24 @@
                 }
                 await loadStudents();
             }
-            catch (error){
+            catch (error) {
                 alert(error);
             }
         }
 
         async function deleteStudent(id) {
-            const response = await fetch(`${"https://6adea6f64e88f1bba4a53b5f.mockapi.io/students"}/${id}`, {
-                method: "DELETE"
-            });
-            if (!response.ok) {
-                throw new Error(`HTTP ${response.status}`);
+            try {
+                const response = await fetch(`${"https://6adea6f64e88f1bba4a53b5f.mockapi.io/students"}/${id}`, {
+                    method: "DELETE"
+                });
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+                await loadStudents();
             }
-            await loadStudents();
+            catch(error){
+                alert(error);
+            }
         }
     </script>
 </head>
