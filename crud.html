@@ -15,6 +15,18 @@
             const students = await response.json();
             renderStudents(students);
         }
+
+        function renderStudents(students) {
+            const body = document.querySelector("#body");
+            body.replaceChildren();
+            students.forEach(student => {
+                const tr = document.createElement("tr");
+                const td = document.createElement("td");
+                td.textContent = `${student.name}(${student.age})`;
+                tr.appendChild(td);
+                body.appendChild(tr);
+            });
+        }
     </script>
 </head>
 
