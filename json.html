@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const student = { name: "Alice", age: 20 };
+        const jsonText = JSON.stringify(student);
+        const restored = JSON.parse(jsonText);
+        console.log(restored.name);
+        async function loadUSers() {
+            try {
+                const response = await fetch("http://jsonplaceholder.typicode.com/users");
+
+                if (!response.ok) {
+                    throw new Error('HTTP ${respose.status}');
+                }
+                const users = await response.jason();
+                console.log(users);
+            } catch (error) {
+                console.error(error);
+            }
+        }
+        
+        const students = []
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
