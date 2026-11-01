@@ -1,4 +1,6 @@
 # Deployment: GitHub URL, Vercel URL, MockAPI Endpoint URL 
+https://6adea6f64e88f1bba4a53b5f.mockapi.io/
+
 https://github.com/2026-2-OSS/assign09-c01-22300619.git
 
 assign09-c01-22300619.vercel.app
