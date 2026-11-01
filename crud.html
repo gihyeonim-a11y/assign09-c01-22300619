@@ -15,7 +15,13 @@
             const students = await response.json();
             renderStudents(students);
         }
-
+        window.addEventListener("load", () => {
+            loadStudents();
+            const submit = document.querySelector("#submit");
+            submit.addEventListener("click", (e) => {
+                e.preventDefault();
+            })
+        });
         function renderStudents(students) {
             const body = document.querySelector("#body");
             body.replaceChildren();
