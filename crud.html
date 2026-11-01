@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script>
+        async function loadStudents() {
+            const response = await fetch("https://6adea6f64e88f1bba4a53b5f.mockapi.io/students");
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}`);
+            }
+            const students = await response.json();
+            renderStudents(students);
+        }
+    </script>
+</head>
+
+<body>
+    <nav class="navbar bg-dark">
+        <div class="text-white p-2 fw-bold">
+            학생 관리 Program
+        </div>
+    </nav>
+    <div class="container col-12 mt-3">
+        <form method="get" action="">
+            <div class="row g-3 mx-3">
+                <label for="name" style="justify-content: flex; margin-bottom: 0%; padding-bottom: 3px;"
+                    class="fw-bold">name</label>
+                <input id="name" type="text" class="pt-0 mt-0 form-control">
+                <label for="age" style="justify-content: flex; margin-bottom: 0%; padding-bottom: 3px;"
+                    class="fw-bold">age</label>
+                <input id="age" type="number" class="pt-0 mt-0 form-control">
+                <label for="major" style="justify-content: flex; margin-bottom: 0%; padding-bottom: 3px;"
+                    class="fw-bold">major</label>
+                <input id="major" type="text" class="pt-0 mt-0 form-control">
+                <input type="submit" class="btn btn-primary fw-bold" id="submit">
+            </div>
+        </form>
+    </div>
+    <div class="container p-3">
+        <table class="table table-hover text-center align-middle mt-3">
+            <thead class="table-dark">
+                <tr>
+                    <th>
+                        name
+                    </th>
+                    <th>
+                        age
+                    </th>
+                    <th>
+                        major
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="body">
+
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
