@@ -26,11 +26,9 @@
             const body = document.querySelector("#body");
             body.replaceChildren();
             students.forEach(student => {
-                const tr = document.createElement("tr");
-                const td = document.createElement("td");
-                td.textContent = `${student.name}(${student.age})`;
-                tr.appendChild(td);
-                body.appendChild(tr);
+                const li = document.createElement("li");
+                li.textContent = `${student.id}. ${student.name}(${student.age}) - ${student.major}`;
+                body.appendChild(li);
             });
         }
     </script>
@@ -58,25 +56,14 @@
             </div>
         </form>
     </div>
+    <label class="fw-bold mx-4 pt-4" style="font-size: larger;">
+        <학생 리스트>
+    </label>
     <div class="container p-3">
-        <table class="table table-hover text-center align-middle mt-3">
-            <thead class="table-dark">
-                <tr>
-                    <th>
-                        name
-                    </th>
-                    <th>
-                        age
-                    </th>
-                    <th>
-                        major
-                    </th>
-                </tr>
-            </thead>
-            <tbody id="body">
+        <ul id="body">
 
-            </tbody>
-        </table>
+        </ul>
+
     </div>
 </body>
 
